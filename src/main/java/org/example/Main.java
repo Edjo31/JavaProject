@@ -10,8 +10,9 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
 
-            Insert insert =new Insert();
-            insert.insert();
+
+            Select select =new Select();
+            select.select();
 
 
     }

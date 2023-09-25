@@ -16,7 +16,7 @@ public class Select {
     public void select() {
 
         Conexion conexion =new Conexion();
-        String Query="Select *from country";
+        String Query="Select *from prueba";
 
 
         try{
@@ -27,15 +27,16 @@ public class Select {
         int ColumnCount=metaData.getColumnCount();
         Vector<String> columName=new Vector<>();
 
-        for(int i=1;i<ColumnCount;i++){
+        for(int i=1;i <= ColumnCount;i++){
             columName.add(metaData.getColumnName(i));
         }
+            System.out.println(ColumnCount);
 
         Vector <Vector<Object>> data =new Vector<>();
 
         while (resultSet.next()){
             Vector<Object> rowData =new Vector<>();
-            for(int i=1;i<ColumnCount;i++){
+            for(int i=1;i<=ColumnCount;i++){
                 rowData.add(resultSet.getObject(i));
             }
             data.add(rowData);
@@ -45,7 +46,7 @@ public class Select {
 
         JTable table =new JTable(tableModel);
 
-        JFrame frame =new JFrame("prueba");
+        JFrame frame =new JFrame("Students");
         frame.add(new JScrollPane(table));
 
         frame.setSize(600,600);
